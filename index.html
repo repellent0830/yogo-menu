@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoGo Yogurt Ice Cream | 數位菜單</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 霞鶩文楷 -->
+    <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'LXGW WenKai Mono TC', sans-serif;
+            background-color: #F4FAF6; /* 清新極淺綠底 */
+            color: #0D2818;
+        }
+        .logo-font { color: #2D6A4F; }
+        .card-shadow {
+            box-shadow: 0 4px 12px -2px rgba(45, 106, 79, 0.12);
+        }
+        /* 縮小配料圖片容器 */
+        .topping-img-box {
+            width: 60px; /* 固定縮小圖片 */
+            height: 60px;
+            overflow: hidden;
+            border-radius: 12px;
+            background-color: #FFF;
+            border: 1px solid #E8F5EE;
+        }
+        .topping-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 字體強化 */
+        .cn-name {
+            font-size: 1.15rem; /* 放大中文 */
+            font-weight: 700;
+            color: #0D2818;
+            line-height: 1.2;
+        }
+        .en-name {
+            font-size: 12px; /* 放大英文 */
+            font-weight: 800;
+            color: #40916C;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+        .sold-out {
+            filter: grayscale(1);
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <!-- 頂部標題區 -->
+    <header class="bg-white pt-10 pb-8 px-6 rounded-b-[3rem] shadow-sm text-center border-b-2 border-green-50">
+        <div class="flex flex-col items-center mb-10">
+            <div class="relative inline-block">
+                <span class="text-6xl font-bold logo-font tracking-tighter">YoGo</span>
+                <img src="mascot.png" alt="logo" class="absolute -top-4 -right-10 w-12 h-12 rotate-12">
+            </div>
+            <p class="text-green-600 text-xs tracking-[0.4em] mt-2 font-bold uppercase">Yogurt Ice Cream</p>
+        </div>
+
+        <!-- 尺寸價格區 -->
+        <div class="grid grid-cols-3 gap-3">
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden mb-2 border border-green-50">
+                    <img src="size-s.jpg" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold">小雪寶</h3>
+                <p class="text-[11px] font-bold text-green-600 uppercase">Small</p>
+                <p class="text-green-800 font-black text-xl mt-1">$159</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-24 h-24 rounded-2xl overflow-hidden mb-2 border-4 border-green-500 shadow-lg scale-110">
+                    <img src="size-m.jpg" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold">中雪寶</h3>
+                <p class="text-[11px] font-bold text-green-600 uppercase">Middle</p>
+                <p class="text-green-800 font-black text-xl mt-1">$179</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-20 h-20 rounded-2xl overflow-hidden mb-2 border border-green-50">
+                    <img src="size-l.jpg" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-lg font-bold">大雪寶</h3>
+                <p class="text-[11px] font-bold text-green-600 uppercase">Large</p>
+                <p class="text-green-800 font-black text-xl mt-1">$199</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-4 mt-12">
+        <!-- 店長推薦區 -->
+        <section class="mb-16">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <img src="mascot.png" class="w-8 h-8 opacity-90" alt="m">
+                <h2 class="text-2xl font-black text-green-900 tracking-wider">店長推薦組合</h2>
+                <img src="mascot.png" class="w-8 h-8 opacity-90 scale-x-[-1]" alt="m">
+            </div>
+
+            <div class="grid grid-cols-3 gap-3">
+                <div class="bg-white p-2 pb-4 rounded-2xl card-shadow border border-green-50 text-center">
+                    <div class="aspect-square rounded-xl overflow-hidden mb-3">
+                        <img src="combo-a.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold leading-tight">莓心莓肺</h4>
+                    <p class="text-[10px] font-bold text-green-600 uppercase mt-1">Berry Mix</p>
+                    <p class="text-green-700 font-black text-lg mt-1">$269</p>
+                </div>
+                <div class="bg-white p-2 pb-4 rounded-2xl card-shadow border border-green-50 text-center">
+                    <div class="aspect-square rounded-xl overflow-hidden mb-3">
+                        <img src="combo-b.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold leading-tight">焦糖星球</h4>
+                    <p class="text-[10px] font-bold text-green-600 uppercase mt-1">Caramel</p>
+                    <p class="text-green-700 font-black text-lg mt-1">$199</p>
+                </div>
+                <div class="bg-white p-2 pb-4 rounded-2xl card-shadow border border-green-50 text-center">
+                    <div class="aspect-square rounded-xl overflow-hidden mb-3">
+                        <img src="combo-c.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-lg font-bold leading-tight">草莓 YoGo</h4>
+                    <p class="text-[10px] font-bold text-green-600 uppercase mt-1">Strawberry</p>
+                    <p class="text-green-700 font-black text-lg mt-1">$239</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 配料區：由 JS 生成 -->
+        <div id="topping-sections"></div>
+    </main>
+
+    <footer class="text-center mt-10 pb-10 text-green-900/30 text-xs font-bold">
+        <p>YoGo Yogurt Ice Cream · Fresh Daily</p>
+    </footer>
+
+    <script>
+        const fruitData = [
+            { name: "蔓越莓", en: "Cranberry", status: "active", img: "f1.jpg" },
+            { name: "香蕉", en: "Banana", status: "active", img: "f2.jpg" },
+            { name: "百香果", en: "Passion", status: "active", img: "f3.jpg" },
+            { name: "芭樂", en: "Guava", status: "active", img: "f4.jpg" },
+            { name: "水蜜桃", en: "Peach", status: "seasonal", img: "f5.jpg" },
+            { name: "藍莓", en: "Blueberry", status: "active", img: "f6.jpg" },
+            { name: "蘋果", en: "Apple", status: "active", img: "f7.jpg" },
+            { name: "奇異果", en: "Kiwi", status: "active", img: "f8.jpg" },
+            { name: "葡萄", en: "Grape", status: "active", img: "f9.jpg" },
+            { name: "酪梨", en: "Avocado", status: "soldout", img: "f10.jpg" },
+            { name: "火龍果", en: "Dragon Fruit", status: "active", img: "f11.jpg" },
+            { name: "橘子", en: "Orange", status: "active", img: "f12.jpg" },
+            { name: "脆梅", en: "Crispy Plum", status: "active", img: "f13.jpg" }
+        ];
+
+        const crunchyData = [
+            { name: "M&M's", en: "M&M Choco", status: "active", img: "c1.jpg" },
+            { name: "珍珠", en: "Boba", status: "active", img: "c2.jpg" },
+            { name: "OREO", en: "Oreo Crumbs", status: "active", img: "c3.jpg" },
+            { name: "小麻糬", en: "Mini Mochi", status: "active", img: "c4.jpg" },
+            { name: "玉米穀片", en: "Corn Flakes", status: "active", img: "c5.jpg" },
+            { name: "椰果", en: "Coco Jelly", status: "active", img: "c6.jpg" },
+            { name: "巧克力球", en: "Choco Ball", status: "active", img: "c7.jpg" },
+            { name: "麥片", en: "Oatmeal", status: "active", img: "c8.jpg" },
+            { name: "棉花糖", en: "Marshmallow", status: "active", img: "c9.jpg" },
+            { name: "芥末花生", en: "Wasabi Nut", status: "active", img: "c10.jpg" },
+            { name: "小熊軟糖", en: "Gummy Bear", status: "active", img: "c11.jpg" }
+        ];
+
+        const sauceData = [
+            { name: "蘋果醬", en: "Apple Jam", status: "active", img: "s1.jpg" },
+            { name: "巧克力醬", en: "Chocolate", status: "active", img: "s2.jpg" },
+            { name: "芒果醬", en: "Mango Jam", status: "active", img: "s3.jpg" },
+            { name: "葡萄醬", en: "Grape Jam", status: "active", img: "s4.jpg" },
+            { name: "焦糖醬", en: "Caramel", status: "active", img: "s5.jpg" },
+            { name: "水蜜桃醬", en: "Peach Jam", status: "active", img: "s6.jpg" },
+            { name: "桂花蜜", en: "Osmanthus", status: "active", img: "s7.jpg" },
+            { name: "蜂蜜", en: "Honey", status: "active", img: "s8.jpg" },
+            { name: "抹茶醬", en: "Matcha", status: "active", img: "s9.jpg" },
+            { name: "桑葚醬", en: "Mulberry", status: "active", img: "s10.jpg" },
+            { name: "鳳梨果醋", en: "Vinegar", status: "active", img: "s11.jpg" },
+            { name: "百香果醬", en: "Passion Jam", status: "active", img: "s12.jpg" },
+            { name: "焦糖杏仁", en: "Almond", status: "active", img: "s13.jpg" }
+        ];
+
+        const categories = [
+            { title: "新鮮水果", en: "Fresh Fruits", data: fruitData },
+            { title: "酥脆 Q 彈", en: "Crunchy Toppings", data: crunchyData },
+            { title: "層次升級", en: "Premium Sauces", data: sauceData }
+        ];
+
+        function render() {
+            const container = document.getElementById('topping-sections');
+            categories.forEach(cat => {
+                let html = `
+                    <section class="mb-14">
+                        <div class="flex items-center justify-center gap-3 mb-6">
+                            <img src="mascot.png" class="w-7 h-7 opacity-70" alt="m">
+                            <div class="text-center">
+                                <h2 class="text-2xl font-black text-green-900 leading-tight">${cat.title}</h2>
+                                <p class="text-[11px] text-green-600 font-bold uppercase tracking-[0.2em]">${cat.en}</p>
+                            </div>
+                            <img src="mascot.png" class="w-7 h-7 opacity-70 scale-x-[-1]" alt="m">
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                `;
+
+                cat.data.forEach(item => {
+                    let statusHtml = "";
+                    if (item.status === 'soldout') {
+                        statusHtml = `<div class="absolute inset-0 bg-white/70 flex items-center justify-center z-10 rounded-2xl"><span class="bg-gray-800 text-white text-[10px] px-2 py-0.5 rounded-md font-bold">SOLD OUT</span></div>`;
+                    } else if (item.status === 'seasonal') {
+                        statusHtml = `<span class="absolute top-1 right-1 bg-orange-500 text-white text-[9px] px-1.5 py-0.5 rounded-md z-10 font-bold shadow-sm">限定</span>`;
+                    }
+
+                    html += `
+                        <div class="bg-white rounded-2xl p-3 flex flex-col items-center relative card-shadow border border-green-50 ${item.status === 'soldout' ? 'sold-out' : ''}">
+                            ${statusHtml}
+                            <div class="topping-img-box mb-3 shadow-inner">
+                                <img src="${item.img}" alt="${item.name}">
+                            </div>
+                            <p class="cn-name text-center">${item.name}</p>
+                            <p class="en-name text-center">${item.en}</p>
+                        </div>
+                    `;
+                });
+                html += `</div></section>`;
+                container.innerHTML += html;
+            });
+        }
+        window.onload = render;
+    </script>
+</body>
+</html>
